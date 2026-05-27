@@ -188,7 +188,7 @@ Top-level: **array** of slot objects (one per ability key/slot).
     "ADD":      false,         // SKILL slots: replace the base move if slot is occupied
     "DURATION": 60,            // AWAKENING only: awakening duration in seconds
     "DELAY":    0,             // AWAKENING only: pre-activation delay
-    "DATA":     { "Line": [...], "Branch": {...}, "Req": [...], "Prop": [...] }
+    "DATA":     { "Line": [...], "Branch": {...}, "Req": [...], "Prop": {...} }
   },
   ...
 ]
@@ -308,7 +308,7 @@ Inside each slot, `DATA` is an object with four sections:
   "Line":   [ ... timeline blocks in order ... ],
   "Branch": { "branchName": { "Req": [...], "Line": [...] }, ... },
   "Req":    [ ... conditions for the whole move to fire ... ],
-  "Prop":   [ ... properties / passive flags ... ]
+  "Prop":   { ... properties / passive flags (object, not array — see §5.19) ... }
 }
 ```
 
@@ -320,7 +320,12 @@ Inside each slot, `DATA` is an object with four sections:
 - **`Req`** is an array of *gates* (`AIR`, `HP`, `ULT`, `JUMP`, `BAR`...);
   if any fails, the slot cannot be activated. Each Req has a `FLIP` boolean
   for inversion.
-- **`Prop`** is an array of property tags (e.g. `AWK` for "hide in
+- **`Prop`** is an **object** (not an array) mapping property
+  short-names to their value: booleans for toggle properties (e.g.
+  `"AWK": true`), numbers for scalar properties (e.g. `"DMG_MULT": 1.5`
+  — unverified short-name). Full list in §5.19. Older versions of
+  this skill incorrectly encoded `Prop` as an array of `{K_NAME:
+  "AWK"}` objects — that format does NOT take effect in-game. (e.g. `AWK` for "hide in
   awakening" mode, applied to base SKILL slots that should disappear
   while awakened). Properties apply to the whole slot. **See §5.19
   for the corrected AWK ↔ AWK2 mapping — earlier drafts had it
@@ -1464,41 +1469,88 @@ awakening" by default — that's backwards. Wiki: with `FLIP` off (the
 default), Is Awakened gates to the **base** state. To require
 awakening, use `"FLIP": true`.
 
-### 5.19 `Prop` entries (slot-wide flags)
+### 5.19 `Prop` — slot-wide property flags
 
-The full Properties list (from the wiki's Properties tab — these are
-the toggles in the in-game Properties tab, encoded as `Prop` entries on
-the slot):
+`Prop` is a **JSON object** keyed by property short-name. **Not an
+array.** Each entry maps a short-name to either a boolean (toggle
+property) or a numeric value (scalar property like a multiplier).
 
-| Property | Behavior |
-|---|---|
-| `Damage Multiplier` | Multiplies the whole ability's damage. |
-| `Knockback Multiplier` | Multiplies the whole ability's knockback. |
-| `Invincible` | Total i-frames for the ability's duration. |
-| `Replace Skill if Occupied` | If the chosen Moveset slot already has a move, replace it. |
-| `Prevent Override` | Stops this ability from being replaced by another with the above property. |
-| `Hide in Awakening` (`AWK`) | Don't show this ability while awakened. |
-| `Keep When Moveset Switches` | Stays bound when base ↔ awakening swap happens. |
-| `Hide in Base` (`AWK2`) | Don't show this ability outside awakening. |
-| `Use When Obtained` | Auto-fires the moment the player gets the ability. |
-| `Use On Death` | Auto-fires when the player dies. |
-| `No Stun` | Disables skill-check stuns (the move can fire even mid-stun). |
-| `No Cancel` | The ability is uninterruptible. |
-| `Variant Tag` | Lets the ability bypass cooldown/skill checks while a tag is active on the user. |
-
-Encoded shorthand seen in real exports (mapping **user-corrected
-May 2026** — earlier drafts had these inverted):
+**Verified encoding shape** — from a real working moveset:
 
 ```jsonc
-{ "K_NAME": "AWK"  }   // Hide in Awakening (base-only ability — goes on base SKILL slots)
-{ "K_NAME": "AWK2" }   // Hide in Base      (awakened-only ability — goes on awakened SKILL slots)
+"Prop": {
+  "AWK":  true,        // hide this slot in awakening (base-only ability)
+  "AWK2": true,        // hide this slot in base      (awakening-only ability)
+  "KEEP": true,        // keep bound when moveset switches
+  // ...add more keys for additional properties
+}
 ```
 
-**Mnemonic to keep them straight:** `AWK` stays on base moves
-("Awakening hides this — it's a base move"). `AWK2` goes on
-awakened moves ("the *second* form's ability — only shows in
-awakening"). The naming is genuinely confusing; double-check the
-Prop assignment before encoding any Pattern C / Shape-2 moveset.
+A slot with no properties uses an empty object:
+
+```jsonc
+"Prop": {}
+```
+
+**Concrete working example** of a Pattern-C key with two SKILL slots
+on the same KEY (one for base, one for awakening):
+
+```jsonc
+[
+  { "K_NAME": "SKILL", "KEY": 1, "NAME": "Base Form Skill",
+    "COOLDOWN": 0, "ADD": false, "TOOL TIP": "",
+    "DATA": { "Line": [...], "Branch": {}, "Req": [],
+              "Prop": { "AWK": true } } },
+  { "K_NAME": "SKILL", "KEY": 1, "NAME": "Awakened Form Skill",
+    "COOLDOWN": 0, "ADD": false, "TOOL TIP": "",
+    "DATA": { "Line": [...], "Branch": {}, "Req": [],
+              "Prop": { "AWK2": true } } }
+]
+```
+
+When this is encoded to the import-code format, the `DATA` object is
+stringified — so the inner stringified version of the first slot's
+DATA reads `"{\"Line\":[],\"Prop\":{\"AWK\":true},\"Req\":[]}"`.
+
+**The previous `Prop: [{ "K_NAME": "AWK" }]` array encoding does NOT
+work in-game.** It encodes losslessly through the codec but JJS
+ignores it — every slot then appears in both base and awakening
+states. Use the object form above.
+
+### Full property list
+
+This is the complete list of properties in the in-game Properties
+tab. Where a property's encoded short-name is verified, it's shown
+in the **Encoded key** column. Unverified short-names are best-guess;
+real exports will confirm.
+
+| Property (UI name) | Encoded key | Type | Behavior |
+|---|---|---|---|
+| Damage Multiplier | `"DMG_MULT"` *(unverified)* | number | Multiplies the whole ability's damage by the value. `< 1` reduces; `< 0` heals (per wiki note on negative multipliers). |
+| Knockback Multiplier | `"KB_MULT"` *(unverified)* | number | Multiplies the ability's knockback. Negative values reverse direction. |
+| Invincible | `"INV"` *(unverified)* | bool | Total i-frames for the ability's duration. |
+| Replace Skill if Occupied | `"REPLACE"` *(unverified)* | bool | If the chosen moveset slot is already taken, this ability replaces the occupier. |
+| Prevent Override | `"PROTECT"` *(unverified)* | bool | Stops this ability from being replaced by another with `Replace Skill if Occupied`. |
+| Hide in Awakening | **`"AWK"`** *(verified)* | bool | Don't show this ability while the user is awakened. Use on **base-form** SKILL slots in a Pattern C kit. |
+| Keep When Moveset Switches | **`"KEEP"`** *(verified)* | bool | Stays bound when base ↔ awakening moveset swap happens. Useful for universal utility abilities. |
+| Hide in Base | **`"AWK2"`** *(verified)* | bool | Don't show this ability while the user is in base. Use on **awakened-form** SKILL slots in a Pattern C kit. |
+| Use When Obtained | `"USE_OBTAIN"` *(unverified)* | bool | Auto-fires the moment the player gets the ability. Common for spawn-in animations / weapon-equip moves. |
+| Use On Death | `"USE_DEATH"` *(unverified)* | bool | Auto-fires when the player dies. For death effects / final blasts. |
+| No Stun | `"NO_STUN"` *(unverified)* | bool | Disables skill-check stuns (the move can fire even mid-stun). |
+| No Cancel | `"NO_CANCEL"` *(unverified)* | bool | The ability is uninterruptible for its full duration. |
+| Variant Tag | `"VARIANT"` *(unverified, may take tag-string value)* | string? | Lets the ability bypass cooldown / skill checks while the named tag is active on the user. See §5.15 for the TAG node. |
+
+**For UNVERIFIED short-names:** the format clearly accepts these as
+object keys; what's unverified is whether the in-game runtime
+recognizes our guessed key. If a property doesn't take effect, decode
+a working moveset that uses it and copy the literal key out. **Or
+ask the user.**
+
+**Mnemonic for `AWK` vs `AWK2`:** `AWK` (no suffix) is for **base
+moves** — "Awakening hides this." `AWK2` (with the 2) is for
+**awakened moves** — "the *second* form only." The naming is
+genuinely backwards-feeling; double-check before encoding any
+Pattern C moveset.
 
 > **⚠ STILL UNVERIFIED BEYOND THE INVERSION — DO NOT ASSUME IT
 > WORKS PERFECTLY ⚠**
@@ -2709,12 +2761,15 @@ a cursed-energy aura the whole time*. Implement with:
 awakening transforms the character and **swaps every skill slot to an
 awakened version**. To pull this off correctly:
 
-1. Mark every base-form ability with `Prop` `{"K_NAME": "AWK"}` ("Hide
-   in Awakening") so they disappear during awakening.
+1. Mark every base-form ability with `"Prop": { "AWK": true }`
+   ("Hide in Awakening") so they disappear during awakening.
 2. Add a parallel set of `SKILL` slots that are the awakened versions,
-   each tagged with `Prop` `{"K_NAME": "AWK2"}` ("Hide in Base") so
+   each tagged with `"Prop": { "AWK2": true }` ("Hide in Base") so
    they only appear while awakened. Typically four (one per KEY 1–4)
-   but the count is flexible — see Shape 2 in §8.1 above.
+   but the count is flexible — see Shape 2 in §8.1 above. Both slots
+   share the same `KEY` integer — having "two skills on KEY 1" is
+   exactly how the format expresses base-vs-awakened on the same
+   keybind. (See §5.19 for the concrete working example.)
 3. The `AWAKENING` slot itself plays the transformation animation +
    sets the buff state for `DURATION` **AND maintains the sustained
    aura** (per the empty-awakening checklist above).
@@ -2722,45 +2777,32 @@ awakened version**. To pull this off correctly:
    the active moveset), unless you also want awakened M1s — in which
    case you'd need to use the Character Block (not just Moveset Block)
    to override them, which is out of scope for a single import code.
-5. Optional: set `Prop` `{"K_NAME": "KEEP"}` (Keep When Moveset Switches)
-   on universal utilities like Cancel-skills.
+5. Optional: set `"Prop": { "KEEP": true }` (Keep When Moveset Switches)
+   on universal utilities like Cancel-skills, or combine: e.g.
+   `"Prop": { "AWK": true, "KEEP": true }` for a base-only skill that
+   *also* persists through the swap.
 
-> **⚠ AWK / AWK2 Prop ENCODING IS UNVERIFIED — AND WAS DOCUMENTED
-> BACKWARDS UNTIL MAY 2026 ⚠**
+> **✅ AWK / AWK2 Prop ENCODING IS VERIFIED (object-form)**
 >
-> Earlier drafts of this skill had the AWK ↔ AWK2 mapping inverted:
-> they said AWK was "Hide in Base" (awakened-only) and AWK2 was
-> "Hide in Awakening" (base-only). The May 2026 Goku playtest
-> corrected this — the right mapping is `AWK = Hide in Awakening`
-> (goes on base SKILLs) and `AWK2 = Hide in Base` (goes on
-> awakened SKILLs). See §5.19 for the corrected table.
+> A user-supplied working moveset confirmed the correct encoding:
+> **`Prop` is a JSON object** keyed by property short-name, e.g.
+> `"Prop": { "AWK": true }`. The previously-documented array form
+> (`Prop: [{ "K_NAME": "AWK" }]`) encodes losslessly but does **not**
+> take effect in-game — JJS ignores it, so all slots remain visible
+> in both states.
 >
-> However, even with the inversion fixed: earlier playtest of an
-> AWK/AWK2-tagged Pattern C moveset still reported **both sets
-> appearing on each key in both states** — the hiding didn't
-> happen. That report was made with the backwards mapping, so we
-> can't tell whether the inversion fix resolves it. Until a
-> Pattern C moveset is playtested with the *correct* mapping and
-> confirmed working, treat the encoding as unverified.
+> Mapping (verified):
+> - `"AWK": true`  → Hide in Awakening (slot is **base-only**).
+> - `"AWK2": true` → Hide in Base (slot is **awakened-only**).
 >
-> Open possibilities if it still doesn't work:
-> - The Prop entry needs additional fields (e.g., a `VALUE`,
->   `ENABLED`, or boolean flag) beyond just `K_NAME`.
-> - The encoded short-name is wrong entirely (the wiki's
->   user-facing labels are "Hide in Awakening" / "Hide in Base";
->   the encoded keys `AWK`/`AWK2` were *inferred* from real
->   exports, not from documentation).
-> - The Prop block belongs at a different level of the JSON tree.
+> See §5.19 for the full encoded property table, the working example,
+> and the additional short-names (most are still unverified — only
+> `AWK`, `AWK2`, and `KEEP` are confirmed from real exports).
 >
-> **Until we decode a known-working Pattern C moveset to see the real
-> encoding, don't ship Pattern C blind.** Either:
-> 1. Ask the user to paste a working Pattern C import code so we can
->    decode it and copy the literal Prop shape, OR
-> 2. Default to Pattern B (which doesn't need AWK/AWK2 to work — base
->    skills stay live with empowered stats), OR
-> 3. Ship Pattern C with the awakened SKILL slots **as the only set**
->    and skip the base versions entirely — the user loses the base-form
->    abilities but the awakening "works."
+> **Implication:** Pattern C is now safely shippable. Two SKILL slots
+> with the same KEY value, one tagged `{"AWK": true}` and one
+> `{"AWK2": true}`, is exactly the correct format for base ↔ awakened
+> swaps.
 
 **Awakened-skill cooldowns** typically take effect immediately on
 awakening, so be careful not to make the player wait 25s into their
@@ -2785,7 +2827,8 @@ When you generate or edit a moveset, never:
    doubt, omit the block rather than guess at the encoded name.
    The unverified §5 blocks to avoid until decoded from a working
    moveset: `ADDAWK`, `ADDHP`, `ADDEV` (all three encoded names are
-   guesses); any Prop K_NAME beyond `AWK` / `AWK2`; `CONNECT`.
+   guesses); any Prop short-name beyond `AWK` / `AWK2` / `KEEP`
+   (see §5.19); `CONNECT`.
 2. **Invent field names.** `BRANCH TARGET` has a space and is upper-case.
    `DEBREE` is mis-spelled in the format — keep it. Renaming
    fields breaks the import.
@@ -3479,7 +3522,7 @@ A reference shape for an m4 with conditional variants:
       }
     },
     "Req": [],
-    "Prop": []
+    "Prop": {}
   }
 }
 ```
