@@ -1,0 +1,402 @@
+[
+  {
+    "K_NAME": "CHASE",
+    "NAME": "Ember Glide",
+    "COOLDOWN": 4,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 0.35, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 5], "PREVIEW": [0, 0.45], "SPEED": 1.4, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 6, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.1, "ALT SIZE": 0.4, "TIME": 0.35, "BODY PART": "Left Leg", "VISUAL TAG": "emberTrail", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 6, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.1, "ALT SIZE": 0.4, "TIME": 0.35, "BODY PART": "Right Leg", "VISUAL TAG": "emberTrail", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Sparks", "AMOUNT": 8, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.4, "TIME": 0.35, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.5, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.5, "SPEED": 1.2, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 55", "TIME": 0.1, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0, "TRUE RAGDOLL": false, "LAST HIT": -1 },
+        { "K_NAME": "WAIT", "TIME": 0.18 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 3", "SIZE": "5, 5, 5", "ROTATION": "0, 0, 0", "DAMAGE": 4, "STUN": 0.3, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": false, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": false, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 4, "PREVIEW": [0.18, 0.28], "BRANCH TARGET": "emberTagHit" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 1.15, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VELO", "FORCE": "0, 3, 14", "TIME": 0.18, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0.3, "TRUE RAGDOLL": false, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.15 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "emberTrail", "BODY PART": "Left Leg", "TIME": 0 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "emberTrail", "BODY PART": "Right Leg", "TIME": 0 }
+      ],
+      "Branch": {
+        "emberTagHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 1.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m1",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [3, 3], "PREVIEW": [0, 0.5], "SPEED": 1.2, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.6, "TIME": 0.25, "BODY PART": "Right Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "WAIT", "TIME": 0.12 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "5, 5, 5", "ROTATION": "0, 0, 0", "DAMAGE": 4, "STUN": 0.35, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": false, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": false, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 4, "PREVIEW": [0.12, 0.22], "BRANCH TARGET": "m1Hit" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 8", "TIME": 0.12, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0, "TRUE RAGDOLL": false, "LAST HIT": -1 }
+      ],
+      "Branch": {
+        "m1Hit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m2",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [3, 3], "PREVIEW": [0, 0.5], "SPEED": 1.25, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.6, "TIME": 0.25, "BODY PART": "Left Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "WAIT", "TIME": 0.12 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "5, 5, 5", "ROTATION": "0, 0, 0", "DAMAGE": 4, "STUN": 0.35, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": false, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": false, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 4, "PREVIEW": [0.12, 0.22], "BRANCH TARGET": "m2Hit" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 1.05, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 8", "TIME": 0.12, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0, "TRUE RAGDOLL": false, "LAST HIT": -1 }
+      ],
+      "Branch": {
+        "m2Hit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m3",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [3, 3], "PREVIEW": [0, 0.5], "SPEED": 1.15, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Whirl Slash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.3, "ALT SIZE": 0.7, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.1, "ALT SIZE": 0.5, "TIME": 0.28, "BODY PART": "Right Leg", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "WAIT", "TIME": 0.14 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "7, 5, 5", "ROTATION": "0, 0, 0", "DAMAGE": 5, "STUN": 0.4, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": false, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": false, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 4, "PREVIEW": [0.14, 0.24], "BRANCH TARGET": "m3Hit" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 0.95, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 6", "TIME": 0.12, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0, "TRUE RAGDOLL": false, "LAST HIT": -1 }
+      ],
+      "Branch": {
+        "m3Hit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m4",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "BRANCH", "BRANCH": "m4Hub", "LAST HIT": -1 }
+      ],
+      "Branch": {
+        "m4Hub": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "BRANCH", "BRANCH": "m4Uppercut", "LAST HIT": -1 },
+            { "K_NAME": "BRANCH", "BRANCH": "m4Downslam", "LAST HIT": -1 }
+          ]
+        },
+        "m4Uppercut": {
+          "Req": [ { "K_NAME": "AIR", "FLIP": true } ],
+          "Line": [
+            { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 0.5, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+            { "K_NAME": "ANIM", "ANIM_USE": [2, 8], "PREVIEW": [0, 0.55], "SPEED": 1.35, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+            { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 12, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.2, "ALT SIZE": 0.4, "TIME": 0.35, "BODY PART": "Right Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 6, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.4, "ALT SIZE": 0.5, "TIME": 0.3, "BODY PART": "Right Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "WAIT", "TIME": 0.2 },
+            { "K_NAME": "HITBOX", "POSITION": "0, 2, 3", "SIZE": "6, 6, 5", "ROTATION": "0, 0, 0", "DAMAGE": 7, "STUN": 0.4, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": false, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": true, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 4, "PREVIEW": [0.2, 0.4], "BRANCH TARGET": "m4UpHit" },
+            { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3, "SPEED": 1.1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+            { "K_NAME": "VELO", "FORCE": "0, 32, 6", "TIME": 0.25, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0.6, "TRUE RAGDOLL": false, "LAST HIT": 1 },
+            { "K_NAME": "WAIT", "TIME": 0.25 },
+            { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "AMOUNT": 1, "TIME": 0.3 },
+            { "K_NAME": "VISUAL", "EFFECT": "Wind Ring", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 3, "TIME": 0.4, "ROTATION": "90, 0, 0", "ALT ROTATION": "90, 0, 0", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" }
+          ]
+        },
+        "m4Downslam": {
+          "Req": [ { "K_NAME": "AIR", "FLIP": false } ],
+          "Line": [
+            { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 0.5, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+            { "K_NAME": "ANIM", "ANIM_USE": [2, 7], "PREVIEW": [0, 0.55], "SPEED": 1.35, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+            { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 12, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.2, "ALT SIZE": 0.4, "TIME": 0.35, "BODY PART": "Right Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 6, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.4, "ALT SIZE": 0.5, "TIME": 0.3, "BODY PART": "Right Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "WAIT", "TIME": 0.2 },
+            { "K_NAME": "HITBOX", "POSITION": "0, -1, 3", "SIZE": "6, 5, 5", "ROTATION": "0, 0, 0", "DAMAGE": 7, "STUN": 0.4, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": false, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": true, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 4, "PREVIEW": [0.2, 0.4], "BRANCH TARGET": "m4DownHit" },
+            { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3, "SPEED": 0.95, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+            { "K_NAME": "VELO", "FORCE": "0, -22, 10", "TIME": 0.25, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0.6, "TRUE RAGDOLL": false, "LAST HIT": 1 },
+            { "K_NAME": "WAIT", "TIME": 0.25 },
+            { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "AMOUNT": 1, "TIME": 0.3 },
+            { "K_NAME": "VISUAL", "EFFECT": "Ring", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 3, "TIME": 0.4, "POSITION": "0, -3, 1", "ALT POSITION": "0, -3, 1", "ROTATION": "90, 0, 0", "ALT ROTATION": "90, 0, 0", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" }
+          ]
+        },
+        "m4UpHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 2, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" }
+          ]
+        },
+        "m4DownHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "200, 40, 20", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 2, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "SPECIAL",
+    "NAME": "Witch's Pyre",
+    "COOLDOWN": 18,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 1.4, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 9], "PREVIEW": [0, 1.2], "SPEED": 1, "LOOPED": false, "FADE IN": 0.08, "FADE OUT": 0.15, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 18, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 0.9, "SIZE": 1, "ALT SIZE": 2, "TIME": 0.6, "BODY PART": "Right Arm", "VISUAL TAG": "pyreCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 18, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 0.9, "SIZE": 1, "ALT SIZE": 2, "TIME": 0.6, "BODY PART": "Left Arm", "VISUAL TAG": "pyreCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Energy Sparks", "AMOUNT": 12, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.3, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.4, "TIME": 0.6, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "pyreCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.5, "ALT OPACITY": 1, "SIZE": 0.8, "ALT SIZE": 1.4, "TIME": 0.55, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "pyreCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 0.85, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "WAIT", "TIME": 0.55 },
+
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "pyreCharge", "BODY PART": "Right Arm", "TIME": 0 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "pyreCharge", "BODY PART": "Left Arm", "TIME": 0 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "pyreCharge", "BODY PART": "HumanoidRootPart", "TIME": 0 },
+
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 14, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "ALT SIZE": 0.7, "TIME": 0.35, "POSITION": "0, 0, 5", "ALT POSITION": "0, 0, 5", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 3, "TIME": 0.35, "POSITION": "0, 0, 5", "ALT POSITION": "0, 0, 5", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 5", "SIZE": "8, 6, 9", "ROTATION": "0, 0, 0", "DAMAGE": 8, "STUN": 0.45, "STUN ANIM": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "360 BLOCK": true, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": false, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 6, "PREVIEW": [0, 0.1], "BRANCH TARGET": "pyreHit1" },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3, "SPEED": 1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Medium", "AMOUNT": 1, "TIME": 0.3 },
+
+        { "K_NAME": "WAIT", "TIME": 0.25 },
+
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 18, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.8, "ALT SIZE": 0.7, "TIME": 0.4, "POSITION": "0, 0, 7", "ALT POSITION": "0, 0, 7", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 4, "TIME": 0.4, "POSITION": "0, 0, 7", "ALT POSITION": "0, 0, 7", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 7", "SIZE": "10, 6, 10", "ROTATION": "0, 0, 0", "DAMAGE": 8, "STUN": 0.5, "STUN ANIM": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "360 BLOCK": true, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": false, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 6, "PREVIEW": [0, 0.1], "BRANCH TARGET": "pyreHit2" },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3, "SPEED": 0.9, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+
+        { "K_NAME": "WAIT", "TIME": 0.3 },
+
+        { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "200, 40, 20", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.8, "ALT SIZE": 4, "TIME": 0.5, "POSITION": "0, 0, 8", "ALT POSITION": "0, 0, 8", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Wind Expand", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 3, "TIME": 0.5, "POSITION": "0, 0, 8", "ALT POSITION": "0, 0, 8", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Ring", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 5, "TIME": 0.5, "POSITION": "0, -2, 6", "ALT POSITION": "0, -2, 6", "ROTATION": "90, 0, 0", "ALT ROTATION": "90, 0, 0", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "AMOUNT": 1, "TIME": 0.4 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 8", "SIZE": "12, 7, 10", "ROTATION": "0, 0, 0", "DAMAGE": 10, "STUN": 0.7, "STUN ANIM": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "360 BLOCK": true, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": true, "CAN KILL": true, "HIT RAGDOLL": true, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 8, "PREVIEW": [0, 0.15], "BRANCH TARGET": "pyreHit3" },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 3, "SPEED": 0.9, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+
+        { "K_NAME": "WAIT", "TIME": 0.5 }
+      ],
+      "Branch": {
+        "pyreHit1": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 1.8, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" }
+          ]
+        },
+        "pyreHit2": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 6, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.35, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" }
+          ]
+        },
+        "pyreHit3": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "200, 40, 20", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 3, "TIME": 0.4, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VELO", "FORCE": "0, 10, -28", "TIME": 0.3, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0.7, "TRUE RAGDOLL": false, "LAST HIT": -1 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Firebrand",
+    "KEY": 1,
+    "ADD": false,
+    "COOLDOWN": 12,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 0.6, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 4], "PREVIEW": [0, 0.55], "SPEED": 1.25, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 14, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 0.9, "SIZE": 1, "ALT SIZE": 1.6, "TIME": 0.3, "BODY PART": "Right Arm", "VISUAL TAG": "firebrandCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Sparks", "AMOUNT": 10, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.3, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.3, "BODY PART": "Right Arm", "VISUAL TAG": "firebrandCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.5, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 1.3, "TIME": 0.3, "BODY PART": "Right Arm", "VISUAL TAG": "firebrandCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "WAIT", "TIME": 0.25 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "firebrandCharge", "BODY PART": "Right Arm", "TIME": 0 },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 22", "TIME": 0.18, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0, "TRUE RAGDOLL": false, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 8, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.15, "ALT OPACITY": 1, "SIZE": 1.2, "ALT SIZE": 0.5, "TIME": 0.3, "BODY PART": "Right Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.3, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "Right Arm", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "WAIT", "TIME": 0.12 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "6, 6, 6", "ROTATION": "0, 0, 0", "DAMAGE": 14, "STUN": 0.6, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": false, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": false, "CAN KILL": true, "HIT RAGDOLL": true, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 4, "PREVIEW": [0, 0.15], "BRANCH TARGET": "firebrandHit" },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3, "SPEED": 1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VELO", "FORCE": "0, 8, 24", "TIME": 0.25, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0.5, "TRUE RAGDOLL": false, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.4 }
+      ],
+      "Branch": {
+        "firebrandHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 2.5, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 6, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.35, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Firewall",
+    "KEY": 2,
+    "ADD": false,
+    "COOLDOWN": 15,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 0.7, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 6], "PREVIEW": [0, 0.65], "SPEED": 1.1, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 16, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 0.9, "SIZE": 1.2, "ALT SIZE": 1.8, "TIME": 0.35, "BODY PART": "Right Arm", "VISUAL TAG": "firewallCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 16, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 0.9, "SIZE": 1.2, "ALT SIZE": 1.8, "TIME": 0.35, "BODY PART": "Left Arm", "VISUAL TAG": "firewallCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Energy Sparks", "AMOUNT": 10, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.3, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.4, "TIME": 0.35, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "firewallCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 0.9, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "WAIT", "TIME": 0.3 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "firewallCharge", "BODY PART": "Right Arm", "TIME": 0 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "firewallCharge", "BODY PART": "Left Arm", "TIME": 0 },
+
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 25, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 2, "ALT SIZE": 1, "TIME": 0.7, "POSITION": "0, 1, 4", "ALT POSITION": "0, 1, 4", "BODY PART": "HumanoidRootPart", "VISUAL TAG": "firewallBody", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Wedge", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.2, "ALT OPACITY": 0.8, "SIZE": 2, "ALT SIZE": 2.2, "TIME": 0.7, "POSITION": "0, 1, 4", "ALT POSITION": "0, 1, 4", "BODY PART": "HumanoidRootPart", "VISUAL TAG": "firewallBody", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Sparks", "AMOUNT": 14, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.5, "ALT SIZE": 0.5, "TIME": 0.7, "POSITION": "0, 1, 4", "ALT POSITION": "0, 1, 4", "BODY PART": "HumanoidRootPart", "VISUAL TAG": "firewallBody", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Medium", "AMOUNT": 1, "TIME": 0.3 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 1, 4", "SIZE": "15, 8, 2", "ROTATION": "0, 0, 0", "DAMAGE": 12, "STUN": 0.5, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "360 BLOCK": true, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": true, "CAN KILL": true, "HIT RAGDOLL": false, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 6, "PREVIEW": [0, 0.15], "BRANCH TARGET": "firewallHit" },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 3, "SPEED": 1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "WAIT", "TIME": 0.6 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "firewallBody", "BODY PART": "HumanoidRootPart", "TIME": 0 }
+      ],
+      "Branch": {
+        "firewallHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "200, 40, 20", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 2, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VELO", "FORCE": "0, 6, -22", "TIME": 0.25, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0.5, "TRUE RAGDOLL": false, "LAST HIT": -1 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Ember Burst",
+    "KEY": 3,
+    "ADD": false,
+    "COOLDOWN": 10,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 0.5, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 12], "PREVIEW": [0, 0.45], "SPEED": 1.3, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 15, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 0.9, "SIZE": 1, "ALT SIZE": 1.6, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "emberBurstCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Energy Sparks", "AMOUNT": 10, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.3, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "emberBurstCharge", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 1.1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "WAIT", "TIME": 0.2 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cancel", "AMOUNT": 1, "VISUAL TAG": "emberBurstCharge", "BODY PART": "HumanoidRootPart", "TIME": 0 },
+
+        { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 4, "TIME": 0.4, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 18, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "ALT SIZE": 0.5, "TIME": 0.4, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Ring", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 4, "TIME": 0.4, "ROTATION": "90, 0, 0", "ALT ROTATION": "90, 0, 0", "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Wind Expand", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 3, "TIME": 0.4, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Medium", "AMOUNT": 1, "TIME": 0.3 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 0", "SIZE": "12, 6, 12", "ROTATION": "0, 0, 0", "DAMAGE": 10, "STUN": 0.5, "STUN ANIM": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "360 BLOCK": true, "CANCEL ENEMY": true, "CLEAR KNOCKBACK": true, "CAN KILL": true, "HIT RAGDOLL": true, "HIT USER": false, "SINGLE TARGET": false, "DEBREE": 6, "PREVIEW": [0, 0.15], "BRANCH TARGET": "emberBurstHit" },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3, "SPEED": 1, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "WAIT", "TIME": 0.45 }
+      ],
+      "Branch": {
+        "emberBurstHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.75, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 2, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+            { "K_NAME": "VELO", "FORCE": "0, 5, -18", "TIME": 0.25, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0.4, "TRUE RAGDOLL": false, "LAST HIT": -1 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": []
+    }
+  },
+
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Cinder Step",
+    "KEY": 4,
+    "ADD": false,
+    "COOLDOWN": 8,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "VALUE": 1, "TIME": 0.4, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "STATE", "STATE": "IFrame", "VALUE": 1, "TIME": 0.3, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "STATE", "STATE": "NoM1", "VALUE": 1, "TIME": 0.3, "CANCEL ON END": true, "DISABLE BURST": false, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 5], "PREVIEW": [0, 0.4], "SPEED": 1.5, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 14, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.3, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Sparks", "AMOUNT": 14, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.2, "ALT SIZE": 0.4, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Visibility", "AMOUNT": 1, "OPACITY": 0.6, "ALT OPACITY": 0, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.5, "SPEED": 1.3, "START": 0, "END": 2, "CANCEL": false, "GLOBAL": false, "PROJECTILE TAG": "nil" },
+        { "K_NAME": "VELO", "FORCE": "0, 2, 25", "TIME": 0.15, "FADE": true, "TRACK": false, "RELATIVE FROM BRANCH": false, "RAGDOLL": 0, "TRUE RAGDOLL": false, "LAST HIT": -1 },
+        { "K_NAME": "WAIT", "TIME": 0.2 },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 14, "COLOR": "255, 110, 30", "ALT COLOR": "255, 200, 80", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.3, "ALT SIZE": 0.5, "TIME": 0.25, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 1, "COLOR": "255, 200, 80", "ALT COLOR": "255, 110, 30", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 0.5, "ALT SIZE": 2, "TIME": 0.3, "BODY PART": "HumanoidRootPart", "CANCEL ON INTERRUPT": true, "EASING STYLE": "Quad", "EASING DIRECTION": "Out" },
+        { "K_NAME": "WAIT", "TIME": 0.1 }
+      ],
+      "Branch": {},
+      "Req": [],
+      "Prop": []
+    }
+  }
+]
