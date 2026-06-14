@@ -1,0 +1,712 @@
+[
+  {
+    "K_NAME": "CHASE",
+    "NAME": "Flowing Water Step",
+    "COOLDOWN": 6,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [2, 20], "PREVIEW": [0, 0.8], "SPEED": 1.0, "LOOPED": false, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Wind Streak", "AMOUNT": 6, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "POSITION": "0, 0, 0", "ALT POSITION": "0, 0, -6", "SIZE": 1, "ALT SIZE": 1.4, "TIME": 0.6, "BODY PART": "HumanoidRootPart", "EASING STYLE": "Sine", "EASING DIRECTION": "Out" },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 10, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.6, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 80", "TIME": 0.8, "FADE": true, "TRACK": true, "LAST HIT": -1 },
+        { "K_NAME": "WAIT", "TIME": 0.5 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "8, 8, 8", "ROTATION": "0, 0, 0", "DAMAGE": 4, "STUN": 0.3, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 4, "BRANCH TARGET": "chaseHit", "PREVIEW": [0.5, 0.7] },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.5, "SPEED": 1.1, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 2, 12", "TIME": 0.15, "FADE": true, "LAST HIT": 1 }
+      ],
+      "Branch": {
+        "chaseHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.75, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 8, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.3, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m1",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [2, 7], "PREVIEW": [0, 0.4], "SPEED": 1.0, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "TIME": 0.3, "BODY PART": "Right Arm" },
+        { "K_NAME": "WAIT", "TIME": 0.13 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 3.5", "SIZE": "8, 8, 8", "ROTATION": "0, 0, 0", "DAMAGE": 5, "STUN": 0.35, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 4, "BRANCH TARGET": "hit", "PREVIEW": [0.13, 0.3] },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.2, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 1, 10", "TIME": 0.15, "FADE": true, "RAGDOLL": 0, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.35 }
+      ],
+      "Branch": {
+        "hit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.75, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m2",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [2, 8], "PREVIEW": [0, 0.4], "SPEED": 1.05, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "TIME": 0.3, "BODY PART": "Right Arm" },
+        { "K_NAME": "WAIT", "TIME": 0.13 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 3.5", "SIZE": "8, 8, 8", "ROTATION": "0, 0, 0", "DAMAGE": 5, "STUN": 0.35, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 4, "BRANCH TARGET": "hit", "PREVIEW": [0.13, 0.3] },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.2, "SPEED": 1.08, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 1, 11", "TIME": 0.15, "FADE": true, "RAGDOLL": 0, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.35 }
+      ],
+      "Branch": {
+        "hit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.75, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m3",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [2, 7], "PREVIEW": [0, 0.4], "SPEED": 0.95, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "TIME": 0.3, "BODY PART": "Right Arm" },
+        { "K_NAME": "WAIT", "TIME": 0.14 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 3.5", "SIZE": "8, 8, 8", "ROTATION": "0, 0, 0", "DAMAGE": 5, "STUN": 0.35, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 4, "BRANCH TARGET": "hit", "PREVIEW": [0.14, 0.3] },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.2, "SPEED": 0.92, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 1, 10", "TIME": 0.15, "FADE": true, "RAGDOLL": 0, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.35 }
+      ],
+      "Branch": {
+        "hit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.75, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "MELEE",
+    "NAME": "m4",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "BRANCH", "BRANCH": "uppercut", "LAST HIT": -1 },
+        { "K_NAME": "BRANCH", "BRANCH": "downslam", "LAST HIT": -1 }
+      ],
+      "Branch": {
+        "uppercut": {
+          "Req": [ { "K_NAME": "AIR", "FLIP": true } ],
+          "Line": [
+            { "K_NAME": "ANIM", "ANIM_USE": [2, 8], "PREVIEW": [0, 0.6], "SPEED": 1.0, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+            { "K_NAME": "VISUAL", "EFFECT": "Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "TIME": 0.4, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 0, 90", "BODY PART": "Right Arm" },
+            { "K_NAME": "WAIT", "TIME": 0.18 },
+            { "K_NAME": "HITBOX", "POSITION": "0, 2, 3", "SIZE": "9, 8, 8", "ROTATION": "0, 0, 0", "DAMAGE": 8, "STUN": 0.4, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "m4hit", "PREVIEW": [0.18, 0.4] },
+            { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.6, "SPEED": 1.0, "START": 0, "END": 500 },
+            { "K_NAME": "VELO", "FORCE": "0, 30, 5", "TIME": 0.25, "FADE": true, "RAGDOLL": 0.6, "LAST HIT": 1 },
+            { "K_NAME": "WAIT", "TIME": 0.2 }
+          ]
+        },
+        "downslam": {
+          "Req": [ { "K_NAME": "AIR", "FLIP": false } ],
+          "Line": [
+            { "K_NAME": "ANIM", "ANIM_USE": [1, 9], "PREVIEW": [0, 0.6], "SPEED": 1.0, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+            { "K_NAME": "VISUAL", "EFFECT": "Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "TIME": 0.4, "ROTATION": "0, 0, 90", "ALT ROTATION": "0, 0, 180", "BODY PART": "Right Arm" },
+            { "K_NAME": "WAIT", "TIME": 0.18 },
+            { "K_NAME": "HITBOX", "POSITION": "0, -1, 3.5", "SIZE": "9, 8, 8", "ROTATION": "0, 0, 0", "DAMAGE": 8, "STUN": 0.4, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "m4hit", "PREVIEW": [0.18, 0.4] },
+            { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.6, "SPEED": 0.95, "START": 0, "END": 500 },
+            { "K_NAME": "VELO", "FORCE": "0, -25, 8", "TIME": 0.25, "FADE": true, "RAGDOLL": 0.6, "LAST HIT": 1 },
+            { "K_NAME": "WAIT", "TIME": 0.2 }
+          ]
+        },
+        "m4hit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.7, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 14, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.2, "TIME": 0.35, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "SPECIAL",
+    "NAME": "Tenth Form: Constant Flux",
+    "COOLDOWN": 25,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 2.5, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [11, 4], "PREVIEW": [0, 2.4], "SPEED": 1.0, "LOOPED": true, "FADE IN": 0.1, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 22, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 2.2, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "fluxAura" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.4, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.12 },
+        { "K_NAME": "VISUAL", "EFFECT": "Whirl Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.1, "ALT SIZE": 1.3, "TIME": 0.3, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 360, 0", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 0", "SIZE": "11, 7, 11", "ROTATION": "0, 0, 0", "DAMAGE": 4, "STUN": 0.3, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "fluxHit", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.0, "SPEED": 1.15, "START": 0, "END": 500 },
+        { "K_NAME": "LOOP", "LOOP BACK": 4, "LOOP AMOUNT": 5, "HOLD": false },
+        { "K_NAME": "WAIT", "TIME": 0.15 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 35, "COLOR": "85, 170, 255", "ALT COLOR": "120, 200, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "ALT SIZE": 2.2, "TIME": 0.6, "POSITION": "0, 1, 1", "ALT POSITION": "0, 6, 4", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "120, 200, 255", "ALT COLOR": "120, 200, 255", "OPACITY": 0.1, "ALT OPACITY": 6, "SIZE": 2, "ALT SIZE": 4, "TIME": 0.5, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Ring", "AMOUNT": 1, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 5, "TIME": 0.5, "POSITION": "0, -1, 1", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "TIME": 0.4 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 1, 2", "SIZE": "14, 12, 12", "ROTATION": "0, 0, 0", "DAMAGE": 8, "STUN": 0.5, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "fluxFinish", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3.0, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 18, 28", "TIME": 0.3, "FADE": true, "RAGDOLL": 0.7, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "fluxHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.8, "ALT OPACITY": 1, "TIME": 0.2, "BODY PART": "HumanoidRootPart" }
+          ]
+        },
+        "fluxFinish": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.6, "ALT OPACITY": 1, "TIME": 0.3, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 20, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "TIME": 0.4, "BODY PART": "Torso" },
+            { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.6, "SPEED": 0.9, "START": 0, "END": 500 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "First Form: Water Surface Slash",
+    "KEY": 1,
+    "ADD": false,
+    "COOLDOWN": 12,
+    "TOOL TIP": "A single clean horizontal slash. Lunges forward and cuts.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 0.45, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [3, 3], "PREVIEW": [0, 0.6], "SPEED": 1.1, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 0.35, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 0, 120", "POSITION": "0, 0, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.2, "SPEED": 1.1, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.25 },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 18", "TIME": 0.15, "FADE": true, "LAST HIT": -1 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "12, 8, 9", "ROTATION": "0, 0, 0", "DAMAGE": 12, "STUN": 0.4, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "cut", "PREVIEW": [0.25, 0.45] },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 1.1, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 4, 20", "TIME": 0.2, "FADE": true, "RAGDOLL": 0.4, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "cut": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.7, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 12, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.2, "TIME": 0.3, "BODY PART": "Torso" },
+            { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.2, "SPEED": 0.95, "START": 0, "END": 500 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK": true }
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Fourth Form: Striking Tide",
+    "KEY": 2,
+    "ADD": false,
+    "COOLDOWN": 16,
+    "TOOL TIP": "A rapid flurry of flowing strikes from changing angles.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 1.2, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [2, 7], "PREVIEW": [0, 0.4], "SPEED": 1.4, "LOOPED": true, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "WAIT", "TIME": 0.1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Melee Trail", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "TIME": 0.2, "BODY PART": "Right Arm" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 3.5", "SIZE": "8, 8, 8", "ROTATION": "0, 0, 0", "DAMAGE": 3, "STUN": 0.25, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 4, "BRANCH TARGET": "tideHit", "PREVIEW": [0, 0.15] },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.0, "SPEED": 1.2, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 6", "TIME": 0.1, "FADE": true, "RAGDOLL": 0, "LAST HIT": 1 },
+        { "K_NAME": "LOOP", "LOOP BACK": 4, "LOOP AMOUNT": 5, "HOLD": false },
+        { "K_NAME": "WAIT", "TIME": 0.1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "SIZE": 1.3, "TIME": 0.3, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 0, 100", "POSITION": "0, 0, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "10, 8, 9", "ROTATION": "0, 0, 0", "DAMAGE": 5, "STUN": 0.4, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "tideFinish", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 5, 18", "TIME": 0.2, "FADE": true, "RAGDOLL": 0.4, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.25 }
+      ],
+      "Branch": {
+        "tideHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.8, "ALT OPACITY": 1, "TIME": 0.15, "BODY PART": "HumanoidRootPart" }
+          ]
+        },
+        "tideFinish": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 14, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.2, "TIME": 0.3, "BODY PART": "Torso" },
+            { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.2, "SPEED": 0.95, "START": 0, "END": 500 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK": true }
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Seventh Form: Drop Ripple Thrust",
+    "KEY": 3,
+    "ADD": false,
+    "COOLDOWN": 16,
+    "TOOL TIP": "A concentrated piercing water-spear thrust that travels forward.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 0.5, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 12], "PREVIEW": [0, 0.5], "SPEED": 1.1, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Energy Sparks", "AMOUNT": 12, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.3, "POSITION": "0, 0, 2", "BODY PART": "Right Arm" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.2, "SPEED": 1.2, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.28 },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 14", "TIME": 0.15, "FADE": true, "LAST HIT": -1 },
+        { "K_NAME": "PROJECTILE", "PROJECTILE TAG": "ripple", "POSITION": "0, 1, 2", "ROTATION": "0, 0, 0", "SIZE": "5, 5, 7", "SPEED": 140, "TIME": 0.45, "DAMAGE": 16, "STUN": 0.5, "STUN ANIM": true, "BLOCKABLE": true, "ATTACK TYPE": "Bullet", "CAN KILL": true, "CONTINUE": false, "SINGLE TARGET": true, "DEBREE": 6, "AIM LAST HIT": 0, "FILTER INTERVAL": 0.2, "BRANCH TARGET": "thrustHit" },
+        { "K_NAME": "VISUAL", "EFFECT": "Beam", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "OPACITY": 0.2, "ALT OPACITY": 1, "TIME": 0.45, "PROJECTILE TAG": "ripple" },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 14, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.45, "PROJECTILE TAG": "ripple" },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.4, "SPEED": 1.15, "PROJECTILE TAG": "ripple", "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "thrustHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.7, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "120, 200, 255", "ALT COLOR": "120, 200, 255", "OPACITY": 0.1, "ALT OPACITY": 5, "SIZE": 1.5, "ALT SIZE": 3, "TIME": 0.3, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 2.5, "SPEED": 1.1, "START": 0, "END": 500 },
+            { "K_NAME": "VELO", "FORCE": "0, 6, 24", "TIME": 0.3, "FADE": true, "RAGDOLL": 0.6, "LAST HIT": 1 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK": true }
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Eighth Form: Waterfall Basin",
+    "KEY": 4,
+    "ADD": false,
+    "COOLDOWN": 15,
+    "TOOL TIP": "A powerful overhead downward slash that crashes the target into the ground.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 0.6, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 9], "PREVIEW": [0, 0.6], "SPEED": 1.0, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cleave", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.6, "TIME": 0.4, "ROTATION": "0, 0, 0", "ALT ROTATION": "180, 0, 0", "POSITION": "0, 2, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.3, "SPEED": 0.9, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.35 },
+        { "K_NAME": "HITBOX", "POSITION": "0, -1, 3.5", "SIZE": "9, 12, 9", "ROTATION": "0, 0, 0", "DAMAGE": 15, "STUN": 0.45, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "basinHit", "PREVIEW": [0.35, 0.55] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 2.8, "SPEED": 0.95, "START": 0, "END": 500 },
+        { "K_NAME": "VISUAL", "EFFECT": "Ring", "AMOUNT": 1, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 4, "TIME": 0.4, "POSITION": "0, -2, 2", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Medium", "TIME": 0.3 },
+        { "K_NAME": "VELO", "FORCE": "0, -28, 6", "TIME": 0.25, "FADE": true, "RAGDOLL": 0.7, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "basinHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.65, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 18, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 0.35, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK": true }
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Second Form: Water Wheel",
+    "KEY": 5,
+    "ADD": false,
+    "COOLDOWN": 13,
+    "TOOL TIP": "An aerial vertical spinning slash. Use while airborne.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 6], "PREVIEW": [0, 0.6], "SPEED": 1.1, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Whirl Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 0.4, "ROTATION": "0, 0, 0", "ALT ROTATION": "360, 0, 0", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.3, "SPEED": 1.15, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.25 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 3.5", "SIZE": "9, 11, 9", "ROTATION": "0, 0, 0", "DAMAGE": 13, "STUN": 0.45, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "wheelHit", "PREVIEW": [0.25, 0.45] },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.6, "SPEED": 1.05, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 26, 6", "TIME": 0.25, "FADE": true, "RAGDOLL": 0.6, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "wheelHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.7, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 12, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.3, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [ { "K_NAME": "AIR", "FLIP": true } ],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Sixth Form: Whirlpool",
+    "KEY": 6,
+    "ADD": false,
+    "COOLDOWN": 16,
+    "TOOL TIP": "A spinning whirlpool that catches everyone nearby and flings them out.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 1.0, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 5], "PREVIEW": [0, 1.0], "SPEED": 1.0, "LOOPED": true, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "360 Wind", "AMOUNT": 8, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 0.9, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Wind Ring", "AMOUNT": 1, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 4, "TIME": 0.9, "POSITION": "0, -1, 0", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.4, "SPEED": 0.95, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.2 },
+        { "K_NAME": "VISUAL", "EFFECT": "Whirl Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "SIZE": 1.3, "TIME": 0.25, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 360, 0", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 0", "SIZE": "13, 8, 13", "ROTATION": "0, 0, 0", "DAMAGE": 4, "STUN": 0.3, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "whirlHit", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "137243377137274", "VOLUME": 2.0, "SPEED": 1.1, "START": 0, "END": 500 },
+        { "K_NAME": "LOOP", "LOOP BACK": 3, "LOOP AMOUNT": 3, "HOLD": false },
+        { "K_NAME": "WAIT", "TIME": 0.1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Wind Expand", "AMOUNT": 6, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "ALT SIZE": 3, "TIME": 0.4, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Medium", "TIME": 0.3 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 0", "SIZE": "15, 9, 15", "ROTATION": "0, 0, 0", "DAMAGE": 8, "STUN": 0.45, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "whirlFling", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 2.8, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 10, 22", "TIME": 0.3, "FADE": true, "RAGDOLL": 0.6, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "whirlHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.8, "ALT OPACITY": 1, "TIME": 0.15, "BODY PART": "HumanoidRootPart" }
+          ]
+        },
+        "whirlFling": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 16, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 0.35, "BODY PART": "Torso" },
+            { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.5, "SPEED": 0.9, "START": 0, "END": 500 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Ninth Form: Splashing Water Flow, Turbulent",
+    "KEY": 7,
+    "ADD": false,
+    "COOLDOWN": 18,
+    "TOOL TIP": "A defensive stance. Parries melee and bullets, then ripostes with a water cross-cut.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "Block", "TIME": 0.7, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 3], "PREVIEW": [0, 0.7], "SPEED": 1.0, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Block", "AMOUNT": 1, "COLOR": "85, 170, 255", "OPACITY": 0.3, "ALT OPACITY": 1, "TIME": 0.7, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "120, 200, 255", "OPACITY": 0.5, "ALT OPACITY": 0.7, "TIME": 0.7, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "parryShimmer" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.0, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "COUNTER", "ATTACK TYPE": "Melee,Bullet", "TIME": 0.7, "STUN": 1.2, "CANCEL ENEMY": true, "REMOVE ON HIT": true, "BRANCH": "riposte", "BRANCH TARGET": "parried" },
+        { "K_NAME": "WAIT", "TIME": 0.7 }
+      ],
+      "Branch": {
+        "riposte": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Cancel", "VISUAL TAG": "parryShimmer", "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "ANIM", "ANIM_USE": [3, 3], "PREVIEW": [0, 0.5], "SPEED": 1.3, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+            { "K_NAME": "VISUAL", "EFFECT": "Slash", "AMOUNT": 1, "COLOR": "85, 170, 255", "ALT COLOR": "200, 235, 255", "SIZE": 1.5, "TIME": 0.3, "ROTATION": "0, 0, 45", "ALT ROTATION": "0, 0, 200", "POSITION": "0, 0, 3", "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.6, "SPEED": 1.1, "START": 0, "END": 500 },
+            { "K_NAME": "WAIT", "TIME": 0.1 },
+            { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "11, 9, 9", "ROTATION": "0, 0, 0", "DAMAGE": 14, "STUN": 0.5, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Melee", "BLOCKABLE": false, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "riposteHit", "PREVIEW": [0.1, 0.3] },
+            { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 2.6, "SPEED": 1.0, "START": 0, "END": 500 },
+            { "K_NAME": "VELO", "FORCE": "0, 8, 26", "TIME": 0.3, "FADE": true, "RAGDOLL": 0.7, "LAST HIT": 1 },
+            { "K_NAME": "WAIT", "TIME": 0.3 }
+          ]
+        },
+        "parried": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "120, 200, 255", "ALT COLOR": "120, 200, 255", "OPACITY": 0.1, "ALT OPACITY": 6, "SIZE": 1.5, "ALT SIZE": 3, "TIME": 0.3, "BODY PART": "HumanoidRootPart" }
+          ]
+        },
+        "riposteHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.6, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 16, "COLOR": "85, 170, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.3, "TIME": 0.3, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Fifth Form: Blessed Rain After the Drought",
+    "KEY": 8,
+    "ADD": false,
+    "COOLDOWN": 24,
+    "TOOL TIP": "A single, merciful, decisive cut on one target. Slow but devastating.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 0.9, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 4], "PREVIEW": [0, 0.9], "SPEED": 1.0, "FADE IN": 0.1, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 10, "COLOR": "120, 200, 255", "ALT COLOR": "255, 255, 255", "OPACITY": 0.2, "ALT OPACITY": 1, "TIME": 0.7, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shine", "AMOUNT": 1, "COLOR": "200, 235, 255", "OPACITY": 0.2, "ALT OPACITY": 1, "TIME": 0.6, "BODY PART": "Right Arm" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.0, "SPEED": 0.8, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.6 },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 16", "TIME": 0.12, "FADE": true, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Slash", "AMOUNT": 1, "COLOR": "255, 255, 255", "ALT COLOR": "120, 200, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.8, "TIME": 0.3, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 0, 140", "POSITION": "0, 0, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "8, 9, 9", "ROTATION": "0, 0, 0", "DAMAGE": 22, "STUN": 0.6, "STUN ANIM": true, "HIT RAGDOLL": true, "SINGLE TARGET": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "rainHit", "BRANCH FINISHER": "mercy", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3.0, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "TIME": 0.3 },
+        { "K_NAME": "VELO", "FORCE": "0, 6, 24", "TIME": 0.3, "FADE": true, "RAGDOLL": 0.8, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.35 }
+      ],
+      "Branch": {
+        "rainHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 255, 255", "OPACITY": 0.5, "ALT OPACITY": 1, "TIME": 0.3, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Burst", "AMOUNT": 20, "COLOR": "120, 200, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "TIME": 0.4, "BODY PART": "Torso" }
+          ]
+        },
+        "mercy": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 30, "COLOR": "200, 235, 255", "ALT COLOR": "255, 255, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "ALT SIZE": 2.5, "TIME": 1.2, "POSITION": "0, 0, 0", "ALT POSITION": "0, 6, 0", "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Shine", "AMOUNT": 1, "COLOR": "255, 255, 255", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 2, "TIME": 1.0, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.5, "SPEED": 0.85, "START": 0, "END": 500 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": {}
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Hinokami Kagura: Dance",
+    "KEY": 1,
+    "ADD": false,
+    "COOLDOWN": 6,
+    "TOOL TIP": "Sun Breathing. A flaming horizontal slash, the foundational dance.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 0.4, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [3, 3], "PREVIEW": [0, 0.5], "SPEED": 1.2, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Slash", "AMOUNT": 1, "COLOR": "255, 128, 64", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.6, "TIME": 0.35, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 0, 130", "POSITION": "0, 0, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 10, "COLOR": "255, 128, 64", "ALT COLOR": "255, 60, 30", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.4, "BODY PART": "Right Arm" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.4, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.22 },
+        { "K_NAME": "VELO", "FORCE": "0, 0, 20", "TIME": 0.15, "FADE": true, "LAST HIT": -1 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 4", "SIZE": "13, 9, 10", "ROTATION": "0, 0, 0", "DAMAGE": 22, "STUN": 0.45, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "danceHit", "PREVIEW": [0.22, 0.42] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 2.8, "SPEED": 1.1, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 6, 24", "TIME": 0.25, "FADE": true, "RAGDOLL": 0.6, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.25 }
+      ],
+      "Branch": {
+        "danceHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 180, 80", "OPACITY": 0.6, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 16, "COLOR": "255, 128, 64", "ALT COLOR": "255, 60, 30", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.35, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK2": true }
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Clear Blue Sky into Raging Sun",
+    "KEY": 2,
+    "ADD": false,
+    "COOLDOWN": 9,
+    "TOOL TIP": "Sun Breathing. A clearing spin flowing into a wide flame cleave.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 1.0, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 5], "PREVIEW": [0, 0.5], "SPEED": 1.2, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Whirl Slash", "AMOUNT": 1, "COLOR": "255, 128, 64", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "TIME": 0.4, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 360, 0", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 10, "COLOR": "255, 128, 64", "ALT COLOR": "255, 60, 30", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.4, "BODY PART": "Right Arm" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.3, "SPEED": 1.1, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.25 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 0", "SIZE": "13, 8, 13", "ROTATION": "0, 0, 0", "DAMAGE": 12, "STUN": 0.35, "STUN ANIM": true, "ATTACK TYPE": "Melee", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 6, "BRANCH TARGET": "skyHit", "PREVIEW": [0.25, 0.4] },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.4, "SPEED": 1.1, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.2 },
+        { "K_NAME": "ANIM", "ANIM_USE": [3, 3], "PREVIEW": [0, 0.5], "SPEED": 1.3, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cleave", "AMOUNT": 1, "COLOR": "255, 80, 40", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 2, "TIME": 0.35, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 0, 160", "POSITION": "0, 0, 4", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 18, "COLOR": "255, 80, 40", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "TIME": 0.4, "POSITION": "0, 0, 4", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "WAIT", "TIME": 0.15 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 5", "SIZE": "16, 10, 12", "ROTATION": "0, 0, 0", "DAMAGE": 16, "STUN": 0.5, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "sunHit", "PREVIEW": [0.15, 0.35] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 2.9, "SPEED": 1.0, "START": 0, "END": 500 },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "TIME": 0.3 },
+        { "K_NAME": "VELO", "FORCE": "0, 10, 26", "TIME": 0.3, "FADE": true, "RAGDOLL": 0.7, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "skyHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 180, 80", "OPACITY": 0.8, "ALT OPACITY": 1, "TIME": 0.15, "BODY PART": "HumanoidRootPart" }
+          ]
+        },
+        "sunHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 180, 80", "OPACITY": 0.6, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 20, "COLOR": "255, 80, 40", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 0.4, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK2": true }
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Fire Wheel",
+    "KEY": 3,
+    "ADD": false,
+    "COOLDOWN": 9,
+    "TOOL TIP": "Sun Breathing. A downward aerial flaming wheel that slams the ground.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 0.6, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [1, 6], "PREVIEW": [0, 0.6], "SPEED": 1.1, "FADE IN": 0.05, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Whirl Slash", "AMOUNT": 1, "COLOR": "255, 128, 64", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.7, "TIME": 0.45, "ROTATION": "0, 0, 0", "ALT ROTATION": "360, 0, 0", "POSITION": "0, 1, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 14, "COLOR": "255, 128, 64", "ALT COLOR": "255, 60, 30", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.45, "POSITION": "0, 1, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.4, "SPEED": 0.95, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.35 },
+        { "K_NAME": "HITBOX", "POSITION": "0, -1, 3.5", "SIZE": "11, 12, 11", "ROTATION": "0, 0, 0", "DAMAGE": 26, "STUN": 0.5, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": true, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "wheelFireHit", "PREVIEW": [0.35, 0.55] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 2.9, "SPEED": 0.95, "START": 0, "END": 500 },
+        { "K_NAME": "VISUAL", "EFFECT": "Ring", "AMOUNT": 1, "COLOR": "255, 128, 64", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 5, "TIME": 0.4, "POSITION": "0, -2, 2", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "TIME": 0.35 },
+        { "K_NAME": "VELO", "FORCE": "0, -26, 8", "TIME": 0.25, "FADE": true, "RAGDOLL": 0.7, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.3 }
+      ],
+      "Branch": {
+        "wheelFireHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 180, 80", "OPACITY": 0.6, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 20, "COLOR": "255, 80, 40", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 0.4, "BODY PART": "Torso" }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK2": true }
+    }
+  },
+  {
+    "K_NAME": "SKILL",
+    "NAME": "Dragon Sun Halo Head Dance",
+    "KEY": 4,
+    "ADD": false,
+    "COOLDOWN": 12,
+    "TOOL TIP": "Sun Breathing, Thirteenth Form. A continuous storm of flaming slashes ending in a solar burst.",
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 2.6, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "STATE", "STATE": "IFrame", "TIME": 0.6, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [11, 4], "PREVIEW": [0, 2.4], "SPEED": 1.1, "LOOPED": true, "FADE IN": 0.1, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 25, "COLOR": "255, 128, 64", "ALT COLOR": "255, 60, 30", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.4, "TIME": 2.2, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "dragonFire" },
+        { "K_NAME": "VISUAL", "EFFECT": "Distortion", "AMOUNT": 4, "TIME": 2.2, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 2.6, "SPEED": 0.85, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.15 },
+        { "K_NAME": "VISUAL", "EFFECT": "Whirl Slash", "AMOUNT": 1, "COLOR": "255, 128, 64", "ALT COLOR": "255, 200, 60", "SIZE": 1.6, "TIME": 0.25, "ROTATION": "0, 0, 0", "ALT ROTATION": "0, 360, 0", "POSITION": "0, 0, 2", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "HITBOX", "POSITION": "0, 0, 1", "SIZE": "13, 10, 13", "ROTATION": "0, 0, 0", "DAMAGE": 5, "STUN": 0.3, "STUN ANIM": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": false, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 8, "BRANCH TARGET": "dragonHit", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "129465573909487", "VOLUME": 2.4, "SPEED": 1.2, "START": 0, "END": 500 },
+        { "K_NAME": "LOOP", "LOOP BACK": 4, "LOOP AMOUNT": 6, "HOLD": false },
+        { "K_NAME": "WAIT", "TIME": 0.2 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 40, "COLOR": "255, 128, 64", "ALT COLOR": "255, 220, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.8, "ALT SIZE": 3, "TIME": 0.6, "POSITION": "0, 1, 1", "ALT POSITION": "0, 8, 3", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 180, 60", "ALT COLOR": "255, 220, 80", "OPACITY": 0.1, "ALT OPACITY": 8, "SIZE": 3, "ALT SIZE": 6, "TIME": 0.6, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Ring", "AMOUNT": 1, "COLOR": "255, 128, 64", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1, "ALT SIZE": 7, "TIME": 0.6, "POSITION": "0, -1, 1", "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "TIME": 0.5 },
+        { "K_NAME": "HITBOX", "POSITION": "0, 1, 2", "SIZE": "18, 14, 14", "ROTATION": "0, 0, 0", "DAMAGE": 15, "STUN": 0.6, "STUN ANIM": true, "HIT RAGDOLL": true, "ATTACK TYPE": "Explosion", "BLOCKABLE": false, "CANCEL ENEMY": true, "CAN KILL": true, "DEBREE": 10, "BRANCH TARGET": "dragonFinish", "PREVIEW": [0, 0.2] },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3.5, "SPEED": 0.9, "START": 0, "END": 500 },
+        { "K_NAME": "VELO", "FORCE": "0, 22, 30", "TIME": 0.3, "FADE": true, "RAGDOLL": 0.9, "TRUE RAGDOLL": true, "LAST HIT": 1 },
+        { "K_NAME": "WAIT", "TIME": 0.35 }
+      ],
+      "Branch": {
+        "dragonHit": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 180, 80", "OPACITY": 0.8, "ALT OPACITY": 1, "TIME": 0.15, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 10, "COLOR": "255, 80, 40", "OPACITY": 0.1, "ALT OPACITY": 1, "TIME": 0.25, "BODY PART": "Torso" }
+          ]
+        },
+        "dragonFinish": {
+          "Req": [],
+          "Line": [
+            { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 220, 120", "OPACITY": 0.4, "ALT OPACITY": 1, "TIME": 0.4, "BODY PART": "HumanoidRootPart" },
+            { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 28, "COLOR": "255, 80, 40", "ALT COLOR": "255, 220, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.8, "TIME": 0.5, "BODY PART": "Torso" },
+            { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3.0, "SPEED": 1.05, "START": 0, "END": 500 }
+          ]
+        }
+      },
+      "Req": [],
+      "Prop": { "AWK2": true }
+    }
+  },
+  {
+    "K_NAME": "AWAKENING",
+    "NAME": "Hinokami Kagura",
+    "DURATION": 55,
+    "DELAY": 0,
+    "DATA": {
+      "Line": [
+        { "K_NAME": "STATE", "STATE": "DirectionLock", "TIME": 3.0, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "STATE", "STATE": "IFrame", "TIME": 2.6, "CANCEL ON END": true, "LAST HIT": -1 },
+        { "K_NAME": "ANIM", "ANIM_USE": [15, 25], "PREVIEW": [0, 2.4], "SPEED": 1.0, "FADE IN": 0.1, "FADE OUT": 0.1, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 45, "COLOR": "255, 128, 64", "ALT COLOR": "255, 200, 60", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "TIME": 2.4, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Shake Heavy", "TIME": 2.4 },
+        { "K_NAME": "SFX", "ID": "120714138513879", "VOLUME": 3.0, "SPEED": 0.8, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 1.6 },
+        { "K_NAME": "VISUAL", "EFFECT": "Screen Color", "AMOUNT": 0.6, "COLOR": "255, 140, 50", "ALT COLOR": "255, 200, 60", "TIME": 0.5, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Field Of View", "AMOUNT": -12, "TIME": 0.4, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 30, "COLOR": "255, 80, 40", "ALT COLOR": "255, 220, 80", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 2, "TIME": 1.0, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Wind Expand", "AMOUNT": 8, "COLOR": "255, 128, 64", "OPACITY": 0.1, "ALT OPACITY": 1, "SIZE": 1.5, "ALT SIZE": 3, "TIME": 1.0, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "VISUAL", "EFFECT": "Clash", "AMOUNT": 1, "COLOR": "255, 180, 60", "ALT COLOR": "255, 220, 80", "OPACITY": 0.1, "ALT OPACITY": 8, "SIZE": 3, "ALT SIZE": 7, "TIME": 0.6, "BODY PART": "HumanoidRootPart" },
+        { "K_NAME": "SFX", "ID": "128213617026859", "VOLUME": 3.5, "SPEED": 0.9, "START": 0, "END": 500 },
+        { "K_NAME": "WAIT", "TIME": 0.8 },
+        { "K_NAME": "STATE", "STATE": "SpeedMultiplier", "VALUE": 1.3, "TIME": 55, "CANCEL ON END": false, "LAST HIT": -1 },
+        { "K_NAME": "STATE", "STATE": "JumpMultiplier", "VALUE": 1.2, "TIME": 55, "CANCEL ON END": false, "LAST HIT": -1 },
+        { "K_NAME": "VISUAL", "EFFECT": "Cursed Energy", "AMOUNT": 18, "COLOR": "255, 128, 64", "ALT COLOR": "255, 200, 60", "OPACITY": 0.2, "ALT OPACITY": 1, "SIZE": 1.2, "TIME": 55, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "sunAura", "RUN ON SERVER": true, "CANCEL ON INTERRUPT": false },
+        { "K_NAME": "VISUAL", "EFFECT": "Flames", "AMOUNT": 8, "COLOR": "255, 80, 40", "ALT COLOR": "255, 200, 60", "OPACITY": 0.3, "ALT OPACITY": 1, "SIZE": 0.9, "TIME": 55, "BODY PART": "Torso", "VISUAL TAG": "sunFlames", "RUN ON SERVER": true, "CANCEL ON INTERRUPT": false },
+        { "K_NAME": "VISUAL", "EFFECT": "Glow", "COLOR": "255, 180, 80", "OPACITY": 0.45, "ALT OPACITY": 0.55, "TIME": 55, "BODY PART": "HumanoidRootPart", "VISUAL TAG": "sunGlow", "RUN ON SERVER": true, "CANCEL ON INTERRUPT": false }
+      ],
+      "Branch": {},
+      "Req": [],
+      "Prop": {}
+    }
+  }
+]
